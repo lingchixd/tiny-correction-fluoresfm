@@ -19,14 +19,12 @@ from collections import defaultdict
 import numpy as np
 from scipy.stats import wilcoxon
 
-# ============== edit here ==============
 CSV_PATH = r"./results_progressive/curve_persample.csv"
 BASELINE = "baseline"          # name of the baseline tier in the csv strategy column
 METRICS  = ["psnr", "ssim"]    # one family of tests per metric
 # Tiers compared against baseline (Table 1 order). Names must match the csv
 # strategy column.
 TIERS = ["pretrained", "out_only", "in_only", "in_out", "outer2", "outer4", "all"]
-# =======================================
 
 def load(csv_path):
     """Return data[strategy][metric] = {filename: value}, for pairing by filename."""
