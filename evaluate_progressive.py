@@ -35,7 +35,6 @@ from open_clip.factory import _MODEL_CONFIGS
 from models.unet_sd_c import UNetModel
 import utils.optim as utils_optim
 
-# ==============================================================================
 CONFIG = {
     # Directory holding the paired FUSE images (three-panel PNGs).
     "data_dir": r"./data/spleen",
@@ -78,7 +77,6 @@ CONFIG = {
 
     "output_dir": r"./results_progressive",
 }
-# ==============================================================================
 
 
 class Patch_stitcher:
