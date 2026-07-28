@@ -80,7 +80,7 @@ CONFIG = {
 }
 
 
-# ---------- data / protocol ----------
+# data
 def load_panel(path, crop_panels, panel_idx):
     img = Image.open(path); W, H = img.size
     pw = W // crop_panels; left = pw * panel_idx
@@ -117,7 +117,7 @@ def make_patches(img_lr, img_hr, patch_size, n_patches):
             torch.from_numpy(np.array(hrs)[:, None]).float())
 
 
-# ---------- patch stitcher (evaluation, identical to main evaluation) ----------
+# patch stitcher
 class Patch_stitcher:
     def __init__(self, patch_size=64, overlap=0, padding_mode="reflect"):
         self.ps, self.ol, self.padding_mode = patch_size, overlap, padding_mode
