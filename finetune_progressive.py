@@ -64,7 +64,6 @@ PROMPTS = {
     ),
 }
 
-# ==============================================================================
 CONFIG = {
     # Tissue: "spleen" or "kidney". Selects the prompt and the output filename.
     "tissue": "spleen",
@@ -103,7 +102,6 @@ CONFIG = {
     "amp":    True,
     "log_every": 10,
 }
-# ==============================================================================
 
 
 def load_panel(path, crop_panels, panel_idx):
@@ -181,12 +179,11 @@ def encode_prompt(prompt, tokenizer, text_model, device, context_length=160):
     return feats
 
 
-# ------------------------------------------------------------------------------
 # Progressive unfreezing under a single rule: symmetrically unfreeze the
 # outermost k input blocks and k output blocks, plus the output convolution.
 # input_blocks are ordered outer(shallow) -> inner(deep) by increasing index;
 # output_blocks are the reverse, so the largest index is the outermost.
-# ------------------------------------------------------------------------------
+
 def set_finetune_progressive(model, strategy):
     for p in model.parameters():
         p.requires_grad = False
