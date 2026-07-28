@@ -14,8 +14,6 @@ We study parameter-efficient adaptation of the FluoResFM fluorescence super-reso
 | `baseline_bicubic.py` | Provided-LR and bicubic-roundtrip baselines (CPU only) | Table 1 (baseline, bicubic rows) |
 | `lr_sweep_all.py` | Learning-rate sensitivity sweep for full fine-tuning | Sec. 4.2 |
 | `holm_correction.py` | Holm multiple-comparison correction on the paired Wilcoxon tests | Sec. 3.6, Table 1 |
-| `plot_budget.py` | Parameter budget vs. performance curve | Fig. 1 |
-| `plot_sweep.py` | Training-length sweep (in vs. out) | Fig. 2 |
 
 
 ## Dependencies
@@ -30,7 +28,7 @@ Python packages:
 ```bash
 conda create -n fluoresfm python=3.10
 conda activate fluoresfm
-pip install torch torchvision numpy pillow scikit-image scipy open_clip_torch tqdm matplotlib
+pip install torch torchvision numpy pillow scikit-image scipy open_clip_torch tqdm
 ```
 
 A `requirements.txt` with pinned versions is also provided.
@@ -99,16 +97,11 @@ python holm_correction.py
 
 # 5. Learning-rate sensitivity for full fine-tuning (Sec. 4.2)
 python lr_sweep_all.py
-
-# 6. Figures
-python plot_budget.py     # Fig. 1
-python plot_sweep.py      # Fig. 2
 ```
 
 Set the paths in each script's `CONFIG` block to your local data and checkpoints.
 For spleen, `finetune_progressive.py` reproduces the checkpoints behind Table 1
 and Fig. 1; switch `tissue` to `kidney` for the cross-tissue results (Sec. 4.6).
-
 
 
 
