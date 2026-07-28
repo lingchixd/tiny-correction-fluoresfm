@@ -59,7 +59,7 @@ Expected layout:
 
 ```
 data/
-  spleen/     # three-panel PNGs
+  spleen/
   kidney/
 checkpoints/
   fluoresfm/
