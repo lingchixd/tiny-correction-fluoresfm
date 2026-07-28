@@ -38,9 +38,7 @@ from open_clip.factory import _MODEL_CONFIGS
 from models.unet_sd_c import UNetModel
 import utils.optim as utils_optim
 
-# ==============================================================================
 # Prompts per tissue. The only difference is the "sample" field.
-# ==============================================================================
 PROMPTS = {
     "spleen": (
         "Task: super-resolution with a scale factor of 2; "
