@@ -23,7 +23,7 @@ from PIL import Image
 from skimage.metrics import peak_signal_noise_ratio as psnr_fn
 from skimage.metrics import structural_similarity as ssim_fn
 
-# ============== configuration, consistent with the main evaluation ==============
+# configuration, consistent with the main evaluation
 CONFIG = {
     "data_dir": r"./data/spleen",
     "crop_panels": 3, "panel_lr": 2, "panel_hr": 1,
@@ -31,7 +31,6 @@ CONFIG = {
     "finetune_sample_name": "Spleen_10x fused 2.png",   # fine-tuning image, excluded from evaluation
     "output_dir": r"./results_progressive",
 }
-# ===============================================================================
 
 def load_panel(path, crop_panels, panel_idx):
     img = Image.open(path); W, H = img.size
