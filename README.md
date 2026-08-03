@@ -44,20 +44,18 @@ its config and weights under `./checkpoints/clip/biomedclip/`.
 
 ## Data
 
-The FUSE images of mouse spleen and kidney were acquired in-house. All animal
-procedures were approved by the relevant institutional ethics committee. The raw
-imaging data are **not publicly released**; they are available from the authors
-upon reasonable request.
+The FUSE images of mouse spleen and kidney were acquired in-house under
+institutionally approved animal protocols. The raw data are not publicly
+available and are not included in this repository.
 
-Each sample is a three-panel PNG of the same field. For this 2x task the middle
-panel is the high-resolution reference and the right panel is the low-resolution
-input (the leftmost panel is a higher-magnification acquisition not used here).
-For each tissue, a single image is reserved for fine-tuning and 24 images are held
-out for evaluation, disjoint from the fine-tuning image at the image level.
+Each sample is a three-panel PNG. For the 2× super-resolution task, the middle
+panel is used as the high-resolution reference and the right panel as the
+low-resolution input; the left panel is not used. For each tissue, one image is
+used for fine-tuning and 24 image-level disjoint images are used for evaluation.
 
 Expected layout:
 
-```
+```text
 data/
   spleen/
   kidney/
